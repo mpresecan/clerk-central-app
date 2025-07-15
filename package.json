@@ -10,7 +10,9 @@
     "dev:pl1": "pnpm --filter pl1 dev",
     "dev:pl2": "pnpm --filter pl2 dev",
     "dev:better-auth": "pnpm --filter better-auth-center dev",
+    "dev:all": "node scripts/dev-all.js",
     "build": "pnpm run --recursive build",
+    "build:all": "node scripts/build-all.js",
     "build:clerk": "pnpm --filter clerk-center build",
     "build:pl1": "pnpm --filter pl1 build",
     "build:pl2": "pnpm --filter pl2 build",
@@ -22,6 +24,8 @@
     "start:better-auth": "pnpm --filter better-auth-center start",
     "lint": "pnpm run --recursive lint",
     "lint:fix": "pnpm run --recursive lint --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "pnpm run --recursive test",
     "test:pl1": "pnpm --filter pl1 test",
     "test:pl2": "pnpm --filter pl2 test",
@@ -31,10 +35,15 @@
     "typecheck": "pnpm run --recursive typecheck"
   },
   "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@next/eslint-plugin-next": "^15.3.0",
     "@types/node": "^22.5.4",
+    "concurrently": "^9.1.0",
+    "eslint": "^9.16.0",
     "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "typescript": "^5.7.3",
-    "concurrently": "^9.1.0"
+    "typescript-eslint": "^8.18.1"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0",

@@ -15,7 +15,7 @@ export default function Home() {
           </p>
 
           <SignedIn>
-            <div className="bg-green-50 bg-green-50 dark:bg-green-800/50 border border-green-200 rounded-md p-4 mb-6">
+            <div className="bg-green-50 bg-green-50 dark:bg-green-800/50border border-green-200 rounded-md p-4 mb-6">
               <h3 className="text-lg font-medium text-green-800">You are signed in</h3>
               <p className="text-green-600">
                 You can now access any of the connected satellite applications.
