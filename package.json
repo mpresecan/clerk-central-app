@@ -1,0 +1,57 @@
+{
+  "name": "centralized-auth-monorepo",
+  "version": "1.0.0",
+  "description": "Centralized authentication monorepo with Clerk auth server and PayloadCMS satellite applications",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "dev:clerk": "pnpm --filter clerk-center dev",
+    "dev:pl1": "pnpm --filter pl1 dev",
+    "dev:pl2": "pnpm --filter pl2 dev",
+    "dev:better-auth": "pnpm --filter better-auth-center dev",
+    "build": "pnpm run --recursive build",
+    "build:clerk": "pnpm --filter clerk-center build",
+    "build:pl1": "pnpm --filter pl1 build",
+    "build:pl2": "pnpm --filter pl2 build",
+    "build:better-auth": "pnpm --filter better-auth-center build",
+    "start": "pnpm run --parallel start",
+    "start:clerk": "pnpm --filter clerk-center start",
+    "start:pl1": "pnpm --filter pl1 start",
+    "start:pl2": "pnpm --filter pl2 start",
+    "start:better-auth": "pnpm --filter better-auth-center start",
+    "lint": "pnpm run --recursive lint",
+    "lint:fix": "pnpm run --recursive lint --fix",
+    "test": "pnpm run --recursive test",
+    "test:pl1": "pnpm --filter pl1 test",
+    "test:pl2": "pnpm --filter pl2 test",
+    "clean": "pnpm run --recursive clean && rm -rf node_modules",
+    "clean:deps": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'pnpm-lock.yaml' -delete",
+    "install:all": "pnpm install",
+    "typecheck": "pnpm run --recursive typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0",
+    "pnpm": "^9 || ^10"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "workspaces": [
+    "clerk-center",
+    "pl1",
+    "pl2",
+    "better-auth-center"
+  ],
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}
