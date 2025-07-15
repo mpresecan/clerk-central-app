@@ -115,3 +115,6 @@ Thumbs.db
 # Docker
 Dockerfile.prod
 docker-compose.prod.yml
+
+
+/docs/*
